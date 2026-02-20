@@ -1,0 +1,22 @@
+/* Calendar */
+.flatpickr-calendar {
+    background: #1c1f2b !important;
+    border: 1px solid #3e4152 !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+}
+
+.flatpickr-day.selected {
+    background: #7c77f5 !important;
+    border-color: #7c77f5 !important;
+}
+
+.flatpickr-months .flatpickr-month, 
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    background: #1c1f2b !important;
+    color: white !important;
+}
+
+/* Row Hover */
+#todo-body tr:hover {
+    background-color: #121420;
+}

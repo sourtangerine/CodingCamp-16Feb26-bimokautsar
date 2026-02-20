@@ -5,21 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List - Bimo</title>
 
-    <!-- CSS External -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <!-- Header Content -->
-    <header></header>
+<body class="bg-[#0f111a] text-white min-h-screen flex items-center justify-center p-6">
+    <div class="bg-[#1c1f2b] w-full max-w-2xl p-8 rounded-xl shadow-2xl border border-gray-800">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white">Todo List</h1>
+        </header>
 
-    <!-- Main Content -->
-    <main></main>
+        <main>
+            <section class="flex flex-col md:flex-row gap-3 mb-6">
+                <input class="flex-grow bg-[#252836] border border-[#3e4152] p-3 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                       type="text" id="todo-input" placeholder="Enter a new todo item">
+                
+                <input class="bg-[#252836] border border-[#3e4152] p-3 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer" 
+                       type="text" id="todo-calendar" placeholder="Select Due Date">
 
-    <!-- Footer Content -->
-    <footer></footer>
-    <!-- Javascript External -->
+                <button id="add-btn" class="bg-[#7c77f5] hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded transition-all" 
+                        type="button">+</button>
+            </section>
+
+            <section class="flex justify-between items-center mb-6">
+                <select id="filter-todo" class="bg-[#252836] border border-[#3e4152] p-2 rounded text-sm font-bold uppercase cursor-pointer">
+                    <option value="all">FILTER (ALL)</option>
+                    <option value="pending">PENDING</option>
+                    <option value="completed">COMPLETED</option>
+                </select>
+
+                <button id="delete-all-btn" class="bg-[#7c77f5] hover:bg-indigo-600 text-white text-xs font-bold py-2 px-4 rounded uppercase transition-all">
+                    DELETE ALL
+                </button>
+            </section>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-[#0b0d14] text-xs uppercase text-gray-400">
+                        <tr>
+                            <th class="p-4">TASK</th>
+                            <th class="p-4">DUE DATE</th>
+                            <th class="p-4 text-center">STATUS</th>
+                            <th class="p-4 text-right">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="todo-body" class="divide-y divide-[#252836]"></tbody>
+                </table>
+                <p id="no-task-msg" class="text-center text-gray-500 mt-6 py-4 italic">No task found</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>
